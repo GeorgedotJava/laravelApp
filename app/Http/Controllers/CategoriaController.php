@@ -15,7 +15,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categoria = Categoria::all();
+        $categorias = Categoria::all();
         return view('categorias', compact('categorias'));
     }
 
@@ -40,6 +40,7 @@ class CategoriaController extends Controller
         $categoria = new Categoria();
         $categoria->nome = $request->input('nomeCategoria');
         $categoria->save();
+        return redirect('/categorias');
     }
 
     /**
